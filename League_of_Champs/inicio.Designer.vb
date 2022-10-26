@@ -36,6 +36,7 @@ Partial Class inicio
         Me.Label2.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.Label2.Location = New System.Drawing.Point(378, 648)
         Me.Label2.Name = "Label2"
+        Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label2.Size = New System.Drawing.Size(476, 16)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Prototipo v1.0.10 - Todo lo mostrado en pantalla se encuentra sujeto a cambios"
@@ -52,8 +53,8 @@ Partial Class inicio
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.Control
-        Me.Label1.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label1.Location = New System.Drawing.Point(21, 613)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(33, 616)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(48, 16)
         Me.Label1.TabIndex = 4
