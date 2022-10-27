@@ -73,11 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="inicio.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="imagenes.vb" />
     <Compile Include="inicio.Designer.vb">
       <DependentUpon>inicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="inicio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -120,7 +120,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lcu-article-backdrop.jpg" />
+    <Content Include="fondo.jpg" />
     <Content Include="logo.ico" />
     <Content Include="logo.png" />
   </ItemGroup>
