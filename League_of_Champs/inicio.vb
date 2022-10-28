@@ -1,38 +1,40 @@
 ﻿Public Class inicio
-    Private Sub TextBox1_Enter(sender As Object, e As EventArgs) Handles TextBox1.Enter
-        If TextBox1.Text = "Username" And TextBox1.ForeColor = Label1.ForeColor Then
+    Dim validator As New validador
 
-            TextBox1.Text = String.Empty
-            TextBox1.ForeColor = Color.FromArgb(1, 60, 60, 65)
+    Private Sub _username_Enter(sender As Object, e As EventArgs) Handles _username.Enter
+        If _username.Text = "Username" And _username.ForeColor = Label1.ForeColor Then
 
-        End If
-    End Sub
-
-    Private Sub TextBox1_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
-        If TextBox1.Text = String.Empty Then
-
-            TextBox1.Text = "Username"
-            TextBox1.ForeColor = Label1.ForeColor
+            _username.Text = String.Empty
+            _username.ForeColor = Color.FromArgb(1, 60, 60, 65)
 
         End If
     End Sub
 
-    Private Sub TextBox2_Enter(sender As Object, e As EventArgs) Handles TextBox2.Enter
-        If TextBox2.Text = "Password" And TextBox2.ForeColor = Label1.ForeColor Then
+    Private Sub _username_Leave(sender As Object, e As EventArgs) Handles _username.Leave
+        If _username.Text = String.Empty Then
 
-            TextBox2.Text = String.Empty
-            TextBox2.ForeColor = Color.FromArgb(1, 60, 60, 65)
-            TextBox2.PasswordChar = "·"
+            _username.Text = "Username"
+            _username.ForeColor = Label1.ForeColor
 
         End If
     End Sub
 
-    Private Sub TextBox2_Leave(sender As Object, e As EventArgs) Handles TextBox2.Leave
-        If TextBox2.Text = String.Empty Then
+    Private Sub _password_Enter(sender As Object, e As EventArgs) Handles _password.Enter
+        If _password.Text = "Password" And _password.ForeColor = Label1.ForeColor Then
 
-            TextBox2.Text = "Password"
-            TextBox2.ForeColor = Label1.ForeColor
-            TextBox2.PasswordChar = ""
+            _password.Text = String.Empty
+            _password.ForeColor = Color.FromArgb(1, 60, 60, 65)
+            _password.PasswordChar = "·"
+
+        End If
+    End Sub
+
+    Private Sub _password_Leave(sender As Object, e As EventArgs) Handles _password.Leave
+        If _password.Text = String.Empty Then
+
+            _password.Text = "Password"
+            _password.ForeColor = Label1.ForeColor
+            _password.PasswordChar = ""
 
         End If
     End Sub
@@ -72,6 +74,24 @@
     End Sub
 
     Private Sub button_Click(sender As Object, e As EventArgs) Handles button.Click
+        Dim exists As Boolean
 
+        If _username.Text.Trim = "Username" Or
+            _password.Text.Trim = "Password" Then
+            MessageBox.Show("Unfilled spaces left.",
+                            "Error",
+                            MessageBoxButtons.OK)
+        Else
+            exists = validator.validarDatos()
+
+            If exists = True Then
+                ' muestra el siguiente form
+                MsgBox("congratulations! u did it!")
+            Else
+                MessageBox.Show("Incorrect username or password.",
+                            "Error",
+                            MessageBoxButtons.OK)
+            End If
+        End If
     End Sub
 End Class

@@ -23,35 +23,35 @@ Partial Class inicio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(inicio))
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me._username = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me._password = New System.Windows.Forms.TextBox()
         Me.button = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TextBox1
+        '_username
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Mark", 9.749998!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.TextBox1.Location = New System.Drawing.Point(37, 157)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(0)
-        Me.TextBox1.MaximumSize = New System.Drawing.Size(200, 20)
-        Me.TextBox1.MaxLength = 50
-        Me.TextBox1.MinimumSize = New System.Drawing.Size(200, 20)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(200, 17)
-        Me.TextBox1.TabIndex = 9
-        Me.TextBox1.Text = "Username"
+        Me._username.BackColor = System.Drawing.Color.WhiteSmoke
+        Me._username.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me._username.Font = New System.Drawing.Font("Mark", 9.749998!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._username.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me._username.Location = New System.Drawing.Point(37, 157)
+        Me._username.Margin = New System.Windows.Forms.Padding(0)
+        Me._username.MaximumSize = New System.Drawing.Size(200, 20)
+        Me._username.MaxLength = 50
+        Me._username.MinimumSize = New System.Drawing.Size(200, 20)
+        Me._username.Name = "_username"
+        Me._username.Size = New System.Drawing.Size(200, 17)
+        Me._username.TabIndex = 9
+        Me._username.Text = "Username"
         '
         'Label1
         '
@@ -128,21 +128,21 @@ Partial Class inicio
         Me.PictureBox2.TabIndex = 12
         Me.PictureBox2.TabStop = False
         '
-        'TextBox2
+        '_password
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Mark", 9.749998!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.TextBox2.Location = New System.Drawing.Point(37, 195)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(0)
-        Me.TextBox2.MaximumSize = New System.Drawing.Size(200, 20)
-        Me.TextBox2.MaxLength = 20
-        Me.TextBox2.MinimumSize = New System.Drawing.Size(200, 20)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(200, 17)
-        Me.TextBox2.TabIndex = 11
-        Me.TextBox2.Text = "Password"
+        Me._password.BackColor = System.Drawing.Color.WhiteSmoke
+        Me._password.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me._password.Font = New System.Drawing.Font("Mark", 9.749998!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._password.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me._password.Location = New System.Drawing.Point(37, 195)
+        Me._password.Margin = New System.Windows.Forms.Padding(0)
+        Me._password.MaximumSize = New System.Drawing.Size(200, 20)
+        Me._password.MaxLength = 20
+        Me._password.MinimumSize = New System.Drawing.Size(200, 20)
+        Me._password.Name = "_password"
+        Me._password.Size = New System.Drawing.Size(200, 17)
+        Me._password.TabIndex = 11
+        Me._password.Text = "Password"
         '
         'button
         '
@@ -167,13 +167,14 @@ Partial Class inicio
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me._password)
+        Me.Controls.Add(Me._username)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "inicio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "League of Champs"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -183,13 +184,13 @@ Partial Class inicio
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents _username As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents _password As TextBox
     Friend WithEvents button As Button
 End Class
