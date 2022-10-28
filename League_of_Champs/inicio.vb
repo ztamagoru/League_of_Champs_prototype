@@ -1,6 +1,4 @@
-﻿
-
-Public Class inicio
+﻿Public Class inicio
     Private Sub TextBox1_Enter(sender As Object, e As EventArgs) Handles TextBox1.Enter
         If TextBox1.Text = "Username" And TextBox1.ForeColor = Label1.ForeColor Then
 

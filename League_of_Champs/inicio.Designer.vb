@@ -22,6 +22,7 @@ Partial Class inicio
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(inicio))
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -160,7 +161,7 @@ Partial Class inicio
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.League_of_Champs.My.Resources.Resources.fondoCopy
+        Me.BackgroundImage = Global.League_of_Champs.My.Resources.Resources.fondo
         Me.ClientSize = New System.Drawing.Size(780, 547)
         Me.Controls.Add(Me.button)
         Me.Controls.Add(Me.Label3)
@@ -171,6 +172,7 @@ Partial Class inicio
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "inicio"
         Me.Text = "League of Champs"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
