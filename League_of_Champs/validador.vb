@@ -15,13 +15,18 @@
         Return validarDatos
     End Function
 
-    Public Overloads Function validarDatos(username, password, email) As Boolean
+    Public Overloads Function validarDatos(username As String, password As String, email As String) As Integer
+        validarDatos = 0
+
+        If validU(username) = True Then
+            validarDatos = 1
+        End If
 
 
         Return validarDatos
     End Function
 
-    Public Function validarMail(mail As String) As Boolean
+    Private Function validarMail(mail As String) As Boolean
         validarMail = True
 
 
@@ -58,5 +63,15 @@
         End If
 
         Return validarMail
+    End Function
+
+    Private Function validU(username As String) As Boolean
+        validU = False
+
+        If username <> user Then
+            validU = True
+        End If
+
+        Return validU
     End Function
 End Class

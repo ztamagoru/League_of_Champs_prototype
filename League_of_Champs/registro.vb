@@ -108,7 +108,7 @@
     End Sub
 
     Private Sub button_Click(sender As Object, e As EventArgs) Handles button.Click
-        Dim exists As Boolean
+        Dim validation As Integer
 
         If _name.Text.Trim = "Name" Or
                 _surname.Text.Trim = "Surname" Or
@@ -120,13 +120,16 @@
                             "Error",
                             MessageBoxButtons.OK)
         Else
-            exists = validator.validarDatos(_username.Text.Trim, _password.Text.Trim, _email.Text.Trim)
+            validation = validator.validarDatos(_username.Text.Trim, _password.Text.Trim, _email.Text.Trim)
 
-            'validmail = validator.validarMail(_email.Text.Trim)
+            Select Case validation
+                Case 0
+                    MsgBox("error")
 
-            'If validmail = True Then
-            '    MsgBox("mail válido")
-            'End If
+                Case 1
+                    MsgBox("usuario inexistente")
+
+            End Select
         End If
     End Sub
 End Class
