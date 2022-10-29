@@ -88,10 +88,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="extras.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="registro.Designer.vb">
+      <DependentUpon>registro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="registro.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="validador.vb" />
     <Compile Include="inicio.Designer.vb">
@@ -120,6 +127,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="registro.resx">
+      <DependentUpon>registro.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

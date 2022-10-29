@@ -1,5 +1,4 @@
-﻿Public Class inicio
-    Dim validator As New validador
+﻿Public Class registro
     Dim extra As New extras
 
     Private Sub _username_Enter(sender As Object, e As EventArgs) Handles _username.Enter
@@ -40,34 +39,16 @@
         End If
     End Sub
 
-    Private Sub inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        extra.redondearBoton(button)
-    End Sub
-
-    Private Sub button_Click(sender As Object, e As EventArgs) Handles button.Click
-        Dim exists As Boolean
-
-        If _username.Text.Trim = "Username" Or
-            _password.Text.Trim = "Password" Then
-            MessageBox.Show("Unfilled spaces left.",
-                            "Error",
-                            MessageBoxButtons.OK)
-        Else
-            exists = validator.validarDatos()
-
-            If exists = True Then
-                ' muestra el siguiente form
-                MsgBox("congratulations! u did it!")
-            Else
-                MessageBox.Show("Incorrect username or password.",
-                            "Error",
-                            MessageBoxButtons.OK)
-            End If
-        End If
-    End Sub
-
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-        registro.Show()
         Me.Hide()
+        inicio.Show()
+    End Sub
+
+    Private Sub registro_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        End
+    End Sub
+
+    Private Sub registro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        extra.redondearBoton(button)
     End Sub
 End Class
