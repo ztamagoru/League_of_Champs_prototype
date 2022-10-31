@@ -1,5 +1,5 @@
 ﻿Public Class validador
-    Public user As String = "test"
+    Public user As String = "test1234"
     Public pass As String = "1234"
     Public email As String = ""
 
@@ -29,10 +29,8 @@
     Private Function validarMail(mail As String) As Boolean
         validarMail = True
 
-
         Dim x As String
         Dim y, p, arr, ca, cp As Integer
-
 
         ca = 0
         cp = 0
@@ -68,7 +66,7 @@
     Private Function validU(username As String) As Boolean
         validU = False
 
-        If username <> user Then
+        If username.Length() > 7 And username <> user Then
             validU = True
         End If
 

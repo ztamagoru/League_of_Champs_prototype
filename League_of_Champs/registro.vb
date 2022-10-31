@@ -3,7 +3,7 @@
     Dim extra As New extras
 
     Private Sub _username_Enter(sender As Object, e As EventArgs) Handles _username.Enter
-        If _username.Text.Trim = "Username" And _username.ForeColor = Label1.ForeColor Then
+        If _username.Text.Trim = "Username" Then
 
             _username.Text = String.Empty
             _username.ForeColor = Color.FromArgb(1, 60, 60, 65)
@@ -16,12 +16,13 @@
 
             _username.Text = "Username"
             _username.ForeColor = Label1.ForeColor
-
+        ElseIf _username.Text.trim = "Username" Then
+            _username.ForeColor = Label1.ForeColor
         End If
     End Sub
 
     Private Sub _password_Enter(sender As Object, e As EventArgs) Handles _password.Enter
-        If _password.Text.Trim = "Password" And _password.ForeColor = Label1.ForeColor Then
+        If _password.Text.Trim = "Password" Then
 
             _password.Text = String.Empty
             _password.ForeColor = Color.FromArgb(1, 60, 60, 65)
@@ -36,7 +37,6 @@
             _password.Text = "Password"
             _password.ForeColor = Label1.ForeColor
             _password.PasswordChar = ""
-
         End If
     End Sub
 
@@ -54,11 +54,10 @@
     End Sub
 
     Private Sub _name_Enter(sender As Object, e As EventArgs) Handles _name.Enter
-        If _name.Text.Trim = "Name" And _name.ForeColor = Label1.ForeColor Then
+        If _name.Text.Trim = "Name" Then
 
             _name.Text = String.Empty
             _name.ForeColor = Color.FromArgb(1, 60, 60, 65)
-
         End If
     End Sub
 
@@ -67,12 +66,13 @@
 
             _name.Text = "Name"
             _name.ForeColor = Label1.ForeColor
-
+        ElseIf _name.Text.trim = "Name" Then
+            _name.ForeColor = Label1.ForeColor
         End If
     End Sub
 
     Private Sub _surname_Enter(sender As Object, e As EventArgs) Handles _surname.Enter
-        If _surname.Text.Trim = "Surname" And _surname.ForeColor = Label1.ForeColor Then
+        If _surname.Text.Trim = "Surname" Then
 
             _surname.Text = String.Empty
             _surname.ForeColor = Color.FromArgb(1, 60, 60, 65)
@@ -85,12 +85,13 @@
 
             _surname.Text = "Surname"
             _surname.ForeColor = Label1.ForeColor
-
+        ElseIf _surname.Text.trim = "Surname" Then
+            _surname.ForeColor = Label1.ForeColor
         End If
     End Sub
 
     Private Sub _email_Enter(sender As Object, e As EventArgs) Handles _email.Enter
-        If _email.Text.Trim = "Email" And _email.ForeColor = Label1.ForeColor Then
+        If _email.Text.Trim = "Email" Then
 
             _email.Text = String.Empty
             _email.ForeColor = Color.FromArgb(1, 60, 60, 65)
@@ -103,7 +104,8 @@
 
             _email.Text = "Email"
             _email.ForeColor = Label1.ForeColor
-
+        ElseIf _email.Text.Trim = "Email" Then
+            _email.ForeColor = Label1.ForeColor
         End If
     End Sub
 
@@ -115,10 +117,9 @@
                 _email.Text.Trim = "Email" Or
                 _username.Text.Trim = "Username" Or
                 _password.Text.Trim = "Password" Then
+            Dim errornum As Integer = 1
 
-            MessageBox.Show("Unfilled spaces left.",
-                            "Error",
-                            MessageBoxButtons.OK)
+            extra.mensajesError(errornum)
         Else
             validation = validator.validarDatos(_username.Text.Trim, _password.Text.Trim, _email.Text.Trim)
 

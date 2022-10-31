@@ -46,12 +46,13 @@
 
     Private Sub button_Click(sender As Object, e As EventArgs) Handles button.Click
         Dim exists As Boolean
+        Dim errornum As Integer
 
         If _username.Text.Trim = "Username" Or
             _password.Text.Trim = "Password" Then
-            MessageBox.Show("Unfilled spaces left.",
-                            "Error",
-                            MessageBoxButtons.OK)
+            errornum = 1
+
+            extra.mensajesError(errornum)
         Else
             exists = validator.validarDatos()
 
@@ -59,9 +60,9 @@
                 ' muestra el siguiente form
                 MsgBox("congratulations! u did it!")
             Else
-                MessageBox.Show("Incorrect username or password.",
-                            "Error",
-                            MessageBoxButtons.OK)
+                errornum = 2
+
+                extra.mensajesError(errornum)
             End If
         End If
     End Sub

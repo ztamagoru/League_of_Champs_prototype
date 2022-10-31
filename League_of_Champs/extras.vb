@@ -32,5 +32,17 @@
         Return btn
     End Function
 
+    Public Sub mensajesError(opt As Integer)
+        Select Case opt
+            Case 1
+                MessageBox.Show("Unfilled spaces left.",
+                            "Error",
+                            MessageBoxButtons.OK)
 
+            Case 2
+                MessageBox.Show("Incorrect username or password.",
+                            "Error",
+                            MessageBoxButtons.OK)
+        End Select
+    End Sub
 End Class
