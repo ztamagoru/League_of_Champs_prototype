@@ -42,6 +42,7 @@
 
     Private Sub inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         extra.redondearBoton(button)
+        Label2.Parent = PictureBox4
     End Sub
 
     Private Sub button_Click(sender As Object, e As EventArgs) Handles button.Click

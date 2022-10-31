@@ -117,20 +117,12 @@
                 _email.Text.Trim = "Email" Or
                 _username.Text.Trim = "Username" Or
                 _password.Text.Trim = "Password" Then
-            Dim errornum As Integer = 1
 
-            extra.mensajesError(errornum)
+            extra.mensajes(1)
         Else
             validation = validator.validarDatos(_username.Text.Trim, _password.Text.Trim, _email.Text.Trim)
 
-            Select Case validation
-                Case 0
-                    MsgBox("error")
-
-                Case 1
-                    MsgBox("usuario inexistente")
-
-            End Select
+            extra.mensajes(validation)
         End If
     End Sub
 End Class
