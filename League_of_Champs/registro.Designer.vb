@@ -22,6 +22,7 @@ Partial Class registro
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(registro))
         Me.Label3 = New System.Windows.Forms.Label()
         Me._password = New System.Windows.Forms.TextBox()
@@ -32,7 +33,10 @@ Partial Class registro
         Me._surname = New System.Windows.Forms.TextBox()
         Me.button = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label3
@@ -55,13 +59,13 @@ Partial Class registro
         Me._password.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me._password.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749998!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._password.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me._password.Location = New System.Drawing.Point(51, 279)
+        Me._password.Location = New System.Drawing.Point(51, 256)
         Me._password.Margin = New System.Windows.Forms.Padding(0)
         Me._password.MaximumSize = New System.Drawing.Size(267, 20)
         Me._password.MaxLength = 20
-        Me._password.MinimumSize = New System.Drawing.Size(267, 20)
+        Me._password.MinimumSize = New System.Drawing.Size(250, 20)
         Me._password.Name = "_password"
-        Me._password.Size = New System.Drawing.Size(267, 20)
+        Me._password.Size = New System.Drawing.Size(250, 20)
         Me._password.TabIndex = 23
         Me._password.Text = "Password"
         '
@@ -149,7 +153,7 @@ Partial Class registro
         Me.button.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.button.ForeColor = System.Drawing.Color.White
         Me.button.Location = New System.Drawing.Point(135, 441)
-        Me.button.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.button.Margin = New System.Windows.Forms.Padding(4)
         Me.button.Name = "button"
         Me.button.Size = New System.Drawing.Size(100, 92)
         Me.button.TabIndex = 25
@@ -163,7 +167,7 @@ Partial Class registro
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(51, 311)
+        Me.Label2.Location = New System.Drawing.Point(51, 288)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label2.Size = New System.Drawing.Size(181, 60)
@@ -171,19 +175,23 @@ Partial Class registro
         Me.Label2.Text = "Entre 8 y 20 caracteres" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mínimo 1 número" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mínimo 1 mayúscula" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mínimo 1 caracter e" &
     "special" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'Label4
+        'ErrorProvider1
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.White
-        Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(51, 242)
-        Me.Label4.Name = "Label4"
-        Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label4.Size = New System.Drawing.Size(138, 15)
-        Me.Label4.TabIndex = 27
-        Me.Label4.Text = "Mínimo 8 caracteres" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.ImageLocation = "https://th.bing.com/th/id/R.a9147ba7e21b566f833b83a41416c947?rik=CXJMVmEGiClg%2bA" &
+    "&pid=ImgRaw&r=0"
+        Me.PictureBox1.Location = New System.Drawing.Point(305, 252)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(36, 28)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 27
+        Me.PictureBox1.TabStop = False
         '
         'registro
         '
@@ -191,7 +199,7 @@ Partial Class registro
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(369, 607)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.button)
         Me.Controls.Add(Me._surname)
@@ -202,10 +210,12 @@ Partial Class registro
         Me.Controls.Add(Me._username)
         Me.Controls.Add(Me.Label3)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "registro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "League of Champs"
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -220,5 +230,6 @@ Partial Class registro
     Friend WithEvents _surname As TextBox
     Friend WithEvents button As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

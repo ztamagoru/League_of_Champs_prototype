@@ -51,6 +51,10 @@
 
     Private Sub registro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         extra.redondearBoton(button)
+        'PictureBox1.Parent = _password
+        'PictureBox1.Top = 1
+        'PictureBox1.BringToFront()
+
     End Sub
 
     Private Sub _name_Enter(sender As Object, e As EventArgs) Handles _name.Enter
@@ -124,5 +128,24 @@
 
             extra.mensajes(validation)
         End If
+    End Sub
+
+    Private Sub _username_TextChanged(sender As Object, e As EventArgs) Handles _username.TextChanged
+        If _username.Text.Trim.Length() < 8 Or _username.Text.Trim.Length() > 50 Then
+            Me.ErrorProvider1.SetError(sender, "The username needs to have between 8 and 50 characters.")
+        Else
+            Me.ErrorProvider1.SetError(sender, "")
+        End If
+    End Sub
+
+    Private Sub PictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
+        _password.PasswordChar = ""
+    End Sub
+
+    Private Sub PictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
+        If _password.Text.Trim <> "Password" Then
+            _password.PasswordChar = "·"
+        End If
+
     End Sub
 End Class

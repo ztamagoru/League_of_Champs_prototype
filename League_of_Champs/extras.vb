@@ -48,7 +48,9 @@
                             "League of Champs",
                             MessageBoxButtons.OK)
             Case 4
-                MessageBox.
+                MessageBox.Show(".",
+                            "League of Champs",
+                            MessageBoxButtons.OK)
         End Select
     End Sub
 End Class

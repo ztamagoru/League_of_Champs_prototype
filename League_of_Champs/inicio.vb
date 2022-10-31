@@ -53,7 +53,7 @@
             _password.Text.Trim = "Password" Then
             errornum = 1
 
-            extra.mensajesError(errornum)
+            extra.mensajes(errornum)
         Else
             exists = validator.validarDatos()
 
@@ -63,7 +63,7 @@
             Else
                 errornum = 2
 
-                extra.mensajesError(errornum)
+                extra.mensajes(errornum)
             End If
         End If
     End Sub
