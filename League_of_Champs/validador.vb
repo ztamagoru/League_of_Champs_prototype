@@ -2,10 +2,13 @@
 Imports System.Text.RegularExpressions
 Public Class validador
     ' hardcodeado de momento únicamente por el prototipo, más adelante se verán removidos del aplicativo
+    Public fname As String = "vimalasitra"
+    Public sname As String = "daryaka"
     Public user As String = "test1234"
     Public pass As String = "hola1234"
-    Public email As String = "you@example.com"
-    Public code As String = ""
+    Public mail As String = "you@example.com"
+    Public code As String = generatedCode()
+
 
     Public Overloads Function validarDatos() As Boolean
         validarDatos = False
@@ -20,13 +23,13 @@ Public Class validador
         Return validarDatos
     End Function
 
-    Public Overloads Function validarDatos(username As String, password As String, mail As String) As Integer
+    Public Overloads Function validarDatos(username As String, password As String, email As String) As Integer
         Dim validP As Boolean = Regex.IsMatch(password, "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$")
         Dim validM As Boolean
         Dim validU As Boolean
 
         ' sujeto a cambios:
-        If Regex.IsMatch(mail, "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?") = True And
+        If Regex.IsMatch(email, "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?") And
             email <> mail Then
             validM = True
         End If
@@ -54,16 +57,11 @@ Public Class validador
     End Function
 
     Private Sub enviarCodigo()
-        Dim num As New Random()
 
-        For i = 1 To 7
-            If i = 4 Then
-                code += "-"
-            Else
-                code += $"{num.Next(1, 9)}"
-            End If
-        Next
 
+        'code = generatedCode()
+
+        Debug.Write(code)
 
         Dim smtp_server As New SmtpClient("smtp.gmail.com", 587)
         Dim e_mail As New MailMessage
@@ -101,9 +99,58 @@ Public Class validador
         'End Try
     End Sub
 
-    Public Sub validarCodigo()
-        Dim _code As String = solicitarCodigo.insertcode.Text.Trim
 
-        MsgBox(_code)
+
+    Public Sub validarCodigo()
+        Dim _code As String = solicitarCodigo.insertcode.Text
+
+        Debug.WriteLine("Ingresado:" + _code)
+        Debug.WriteLine("Generado" + code)
+
+        If code = _code Then
+            registrarUsuario()
+        Else
+            MessageBox.Show("Invalid code.",
+                            "Error",
+                            MessageBoxButtons.OK)
+        End If
     End Sub
+
+    Private Sub registrarUsuario()
+        ' sujeto a cambios:
+
+        Dim name, surname, username, email, password As String
+
+        name = registro._name.Text.Trim
+        surname = registro._surname.Text.Trim
+        username = registro._username.Text.Trim
+        email = registro._email.Text.Trim
+        password = registro._password.Text.Trim
+
+        fname = name
+        sname = surname
+        user = username
+        mail = email
+        pass = password
+
+        MessageBox.Show("Account created succesfully.",
+                        "League of Champs",
+                        MessageBoxButtons.OK)
+
+
+    End Sub
+    Private Function generatedCode() As String
+        Dim num As New Random()
+        Dim generated As String = ""
+
+        For i = 1 To 7
+            If i = 4 Then
+                generated += "-"
+            Else
+                generated += $"{num.Next(1, 9)}"
+            End If
+        Next
+
+        Return generated
+    End Function
 End Class
