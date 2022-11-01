@@ -22,12 +22,16 @@ Public Class solicitarCodigo
         input = registro._email.Text.Trim
         pattern = "(?<=[\w]{3})[\w-\._\+ %]*(?=[\w]{1}@)"
 
-        ocult = Regex.Replace(input, pattern, "*")
+        ocult = Regex.Replace(input, pattern, "**")
 
         Label1.Text = "A mail was sent to " + ocult
     End Sub
 
     Private Sub solicitarCodigo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         extra.redondearBoton(button)
+    End Sub
+
+    Private Sub button_Click(sender As Object, e As EventArgs) Handles button.Click
+
     End Sub
 End Class

@@ -34,23 +34,28 @@ Partial Class solicitarCodigo
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Mark", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(24, 21)
+        Me.Label1.Location = New System.Drawing.Point(18, 17)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label1.Size = New System.Drawing.Size(176, 20)
+        Me.Label1.Size = New System.Drawing.Size(152, 19)
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "A code was sent to "
         '
         'MaskedTextBox1
         '
-        Me.MaskedTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MaskedTextBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.MaskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.MaskedTextBox1.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MaskedTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
         Me.MaskedTextBox1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(142, 83)
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(97, 72)
+        Me.MaskedTextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.MaskedTextBox1.Mask = "###-###"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(164, 45)
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(124, 26)
         Me.MaskedTextBox1.TabIndex = 19
         Me.MaskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -59,12 +64,13 @@ Partial Class solicitarCodigo
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Mark", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(24, 56)
+        Me.Label2.Location = New System.Drawing.Point(18, 46)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label2.Size = New System.Drawing.Size(152, 20)
+        Me.Label2.Size = New System.Drawing.Size(128, 19)
         Me.Label2.TabIndex = 20
         Me.Label2.Text = "Insert code here:"
         '
@@ -73,25 +79,25 @@ Partial Class solicitarCodigo
         Me.button.FlatAppearance.BorderSize = 0
         Me.button.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.button.ForeColor = System.Drawing.Color.White
-        Me.button.Location = New System.Drawing.Point(329, 137)
-        Me.button.Margin = New System.Windows.Forms.Padding(4)
+        Me.button.Location = New System.Drawing.Point(247, 111)
         Me.button.Name = "button"
-        Me.button.Size = New System.Drawing.Size(100, 52)
+        Me.button.Size = New System.Drawing.Size(75, 42)
         Me.button.TabIndex = 21
         Me.button.Text = ">"
         Me.button.UseVisualStyleBackColor = True
         '
         'solicitarCodigo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(444, 205)
+        Me.ClientSize = New System.Drawing.Size(333, 167)
         Me.Controls.Add(Me.button)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.MaskedTextBox1)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "solicitarCodigo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "League of Champs"
