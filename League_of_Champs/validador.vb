@@ -64,7 +64,7 @@ Public Class validador
         Dim e_mail As New MailMessage
         Dim text As String
 
-        text = "Dear *" + registro._name.Text.Trim + "* " + vbCrLf +
+        text = "Dear " + registro._name.Text.Trim + vbCrLf +
             "Please verify your email adress to complete your League of Champs account." + vbCrLf +
             "Code: " + code + vbCrLf + vbCrLf +
             "Thank you," + vbCrLf + "The League of Champs Team"

@@ -7,7 +7,6 @@
 
             _username.Text = String.Empty
             _username.ForeColor = Color.FromArgb(1, 60, 60, 65)
-
         End If
     End Sub
 

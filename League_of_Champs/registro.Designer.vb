@@ -170,10 +170,9 @@ Partial Class registro
         Me.Label2.Location = New System.Drawing.Point(51, 288)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label2.Size = New System.Drawing.Size(181, 60)
+        Me.Label2.Size = New System.Drawing.Size(154, 45)
         Me.Label2.TabIndex = 26
-        Me.Label2.Text = "Entre 8 y 20 caracteres" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mínimo 1 número" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mínimo 1 mayúscula" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mínimo 1 caracter e" &
-    "special" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label2.Text = "Entre 8 y 20 caracteres" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mínimo 1 número" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mínimo 1 mayúscula"
         '
         'ErrorProvider1
         '
