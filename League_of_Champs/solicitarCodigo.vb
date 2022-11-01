@@ -33,6 +33,18 @@ Public Class solicitarCodigo
     End Sub
 
     Private Sub button_Click(sender As Object, e As EventArgs) Handles button.Click
-        validator.validarCodigo()
+        If validator.validarCodigo() Then
+            registro.Enabled = True
+            registro.Hide()
+            inicio.Show()
+
+            MessageBox.Show("Account created succesfully.",
+                        "League of Champs",
+                        MessageBoxButtons.OK)
+
+            Me.Hide()
+        Else
+            extra.mensajes(6)
+        End If
     End Sub
 End Class

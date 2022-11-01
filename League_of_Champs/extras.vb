@@ -50,6 +50,9 @@
 
             Case 5
                 msg = "Invalid password."
+
+            Case 6
+                msg = "Invalid code."
         End Select
 
         MessageBox.Show(msg, "Error", MessageBoxButtons.OK)

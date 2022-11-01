@@ -2,11 +2,11 @@
 Imports System.Text.RegularExpressions
 Public Class validador
     ' hardcodeado de momento únicamente por el prototipo, más adelante se verán removidos del aplicativo
-    Public fname As String = "vimalasitra"
-    Public sname As String = "daryaka"
-    Public user As String = "test1234"
-    Public pass As String = "hola1234"
-    Public mail As String = "you@example.com"
+    Public Shared fname As String = "vimalasitra"
+    Public Shared sname As String = "daryaka"
+    Public Shared user As String = "test1234"
+    Public Shared pass As String = "hola1234"
+    Public Shared mail As String = "you@example.com"
     Public Shared ncode As String
 
 
@@ -110,7 +110,7 @@ Public Class validador
         'End Try
     End Sub
 
-    Public Sub validarCodigo()
+    Public Function validarCodigo() As Boolean
         Dim insertcode As String = solicitarCodigo.insertcode.Text
 
         Debug.WriteLine("Ingresado: " + insertcode)
@@ -119,15 +119,10 @@ Public Class validador
         If ncode = insertcode Then
             registrarUsuario()
 
-            MessageBox.Show("Account created succesfully.",
-                        "League of Champs",
-                        MessageBoxButtons.OK)
-        Else
-            MessageBox.Show("Invalid code.",
-                            "Error",
-                            MessageBoxButtons.OK)
+            Return True
         End If
-    End Sub
+        Return False
+    End Function
 
     Private Sub registrarUsuario()
         ' sujeto a cambios:
@@ -145,6 +140,5 @@ Public Class validador
         user = username
         mail = email
         pass = password
-
     End Sub
 End Class
