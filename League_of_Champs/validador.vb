@@ -7,7 +7,7 @@ Public Class validador
     Public user As String = "test1234"
     Public pass As String = "hola1234"
     Public mail As String = "you@example.com"
-    Public code As String = generatedCode()
+    Public Shared ncode As String
 
 
     Public Overloads Function validarDatos() As Boolean
@@ -57,11 +57,18 @@ Public Class validador
     End Function
 
     Private Sub enviarCodigo()
+        Dim num As New Random()
+        Dim generatedCode As String = ""
 
+        For i = 1 To 7
+            If i = 4 Then
+                generatedCode += "-"
+            Else
+                generatedCode += $"{num.Next(1, 9)}"
+            End If
+        Next
 
-        'code = generatedCode()
-
-        Debug.Write(code)
+        Debug.WriteLine(generatedCode)
 
         Dim smtp_server As New SmtpClient("smtp.gmail.com", 587)
         Dim e_mail As New MailMessage
@@ -69,7 +76,7 @@ Public Class validador
 
         text = "Dear " + registro._name.Text.Trim + "," + vbCrLf +
             "Please verify your email adress to complete your League of Champs account." + vbCrLf +
-            "Code: " + code + vbCrLf + vbCrLf +
+            "Code: " + generatedCode + vbCrLf + vbCrLf +
             "Thank you," + vbCrLf + "The League of Champs Team"
 
         smtp_server.UseDefaultCredentials = False
@@ -85,6 +92,10 @@ Public Class validador
 
         smtp_server.SendMailAsync(e_mail)
 
+        Debug.WriteLine(generatedCode)
+
+        ncode = generatedCode
+
         'Try
         '    smtp_server.SendMailAsync(e_mail)
         'Catch ex As Exception
@@ -99,16 +110,18 @@ Public Class validador
         'End Try
     End Sub
 
-
-
     Public Sub validarCodigo()
-        Dim _code As String = solicitarCodigo.insertcode.Text
+        Dim insertcode As String = solicitarCodigo.insertcode.Text
 
-        Debug.WriteLine("Ingresado:" + _code)
-        Debug.WriteLine("Generado" + code)
+        Debug.WriteLine("Ingresado: " + insertcode)
+        Debug.WriteLine("Generado: " + ncode)
 
-        If code = _code Then
+        If ncode = insertcode Then
             registrarUsuario()
+
+            MessageBox.Show("Account created succesfully.",
+                        "League of Champs",
+                        MessageBoxButtons.OK)
         Else
             MessageBox.Show("Invalid code.",
                             "Error",
@@ -133,24 +146,5 @@ Public Class validador
         mail = email
         pass = password
 
-        MessageBox.Show("Account created succesfully.",
-                        "League of Champs",
-                        MessageBoxButtons.OK)
-
-
     End Sub
-    Private Function generatedCode() As String
-        Dim num As New Random()
-        Dim generated As String = ""
-
-        For i = 1 To 7
-            If i = 4 Then
-                generated += "-"
-            Else
-                generated += $"{num.Next(1, 9)}"
-            End If
-        Next
-
-        Return generated
-    End Function
 End Class
