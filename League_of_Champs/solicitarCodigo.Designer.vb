@@ -24,7 +24,7 @@ Partial Class solicitarCodigo
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(solicitarCodigo))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.insertcode = New System.Windows.Forms.MaskedTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.button = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -44,20 +44,20 @@ Partial Class solicitarCodigo
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "A code was sent to "
         '
-        'MaskedTextBox1
+        'insertcode
         '
-        Me.MaskedTextBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.MaskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.MaskedTextBox1.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaskedTextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
-        Me.MaskedTextBox1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(97, 72)
-        Me.MaskedTextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.MaskedTextBox1.Mask = "###-###"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(124, 26)
-        Me.MaskedTextBox1.TabIndex = 19
-        Me.MaskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.insertcode.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.insertcode.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.insertcode.Font = New System.Drawing.Font("Mark", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.insertcode.ForeColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(86, Byte), Integer))
+        Me.insertcode.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite
+        Me.insertcode.Location = New System.Drawing.Point(97, 72)
+        Me.insertcode.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.insertcode.Mask = "###-###"
+        Me.insertcode.Name = "insertcode"
+        Me.insertcode.Size = New System.Drawing.Size(124, 26)
+        Me.insertcode.TabIndex = 19
+        Me.insertcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -94,7 +94,7 @@ Partial Class solicitarCodigo
         Me.ClientSize = New System.Drawing.Size(333, 167)
         Me.Controls.Add(Me.button)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.MaskedTextBox1)
+        Me.Controls.Add(Me.insertcode)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
@@ -107,7 +107,7 @@ Partial Class solicitarCodigo
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents insertcode As MaskedTextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents button As Button
 End Class

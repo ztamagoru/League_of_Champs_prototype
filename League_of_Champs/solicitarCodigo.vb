@@ -2,6 +2,7 @@
 
 Public Class solicitarCodigo
     Dim extra As New extras
+    Dim validator As New validador
 
     Private Sub solicitarCodigo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim resp As MsgBoxResult
@@ -32,6 +33,6 @@ Public Class solicitarCodigo
     End Sub
 
     Private Sub button_Click(sender As Object, e As EventArgs) Handles button.Click
-
+        validator.validarCodigo()
     End Sub
 End Class

@@ -33,27 +33,25 @@
     End Function
 
     Public Sub mensajes(opt As Integer)
+        Dim msg As String
+
         Select Case opt
             Case 1
-                MessageBox.Show("Unfilled spaces left.",
-                            "Error",
-                            MessageBoxButtons.OK)
+                msg = "Unfilled spaces left."
+
             Case 2
-                MessageBox.Show("Incorrect username or password.",
-                            "Error",
-                            MessageBoxButtons.OK)
+                msg = "Incorrect username or password."
+
             Case 3
-                MessageBox.Show("Invalid user",
-                            "Error",
-                            MessageBoxButtons.OK)
+                msg = "Invalid user."
+
             Case 4
-                MessageBox.Show("Invalid email",
-                            "Error",
-                            MessageBoxButtons.OK)
+                msg = "Invalid email."
+
             Case 5
-                MessageBox.Show("Invalid password",
-                            "Error",
-                            MessageBoxButtons.OK)
+                msg = "Invalid password."
         End Select
+
+        MessageBox.Show(msg, "Error", MessageBoxButtons.OK)
     End Sub
 End Class

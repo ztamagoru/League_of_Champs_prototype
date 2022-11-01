@@ -56,8 +56,12 @@ Public Class validador
     Private Sub enviarCodigo()
         Dim num As New Random()
 
-        For i = 1 To 6
-            code += $"{num.Next(1, 9)}"
+        For i = 1 To 7
+            If i = 4 Then
+                code += "-"
+            Else
+                code += $"{num.Next(1, 9)}"
+            End If
         Next
 
 
@@ -65,16 +69,14 @@ Public Class validador
         Dim e_mail As New MailMessage
         Dim text As String
 
-        text = "Dear " + registro._name.Text.Trim + vbCrLf +
+        text = "Dear " + registro._name.Text.Trim + "," + vbCrLf +
             "Please verify your email adress to complete your League of Champs account." + vbCrLf +
             "Code: " + code + vbCrLf + vbCrLf +
             "Thank you," + vbCrLf + "The League of Champs Team"
 
         smtp_server.UseDefaultCredentials = False
         smtp_server.Credentials = New Net.NetworkCredential("mariazdanovitchet24@gmail.com", "vwjivhvrptbucxue")
-        smtp_server.Port = 587
         smtp_server.EnableSsl = True
-        smtp_server.Host = "smtp.gmail.com"
 
         e_mail = New MailMessage
         e_mail.From = New MailAddress("mariazdanovitchet24@gmail.com")
@@ -97,5 +99,11 @@ Public Class validador
         '    solicitarCodigo.Hide()
         '    registro.Enabled = True
         'End Try
+    End Sub
+
+    Public Sub validarCodigo()
+        Dim _code As String = solicitarCodigo.insertcode.Text.Trim
+
+        MsgBox(_code)
     End Sub
 End Class
