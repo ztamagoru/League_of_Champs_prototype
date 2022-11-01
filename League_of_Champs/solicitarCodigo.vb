@@ -11,4 +11,9 @@
             e.Cancel = True
         End If
     End Sub
+
+    Private Sub solicitarCodigo_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        Label1.Text = "A mail was sent to " + registro._email.Text.Trim
+
+    End Sub
 End Class

@@ -65,7 +65,7 @@ Partial Class registro
         Me._password.MaxLength = 20
         Me._password.MinimumSize = New System.Drawing.Size(250, 20)
         Me._password.Name = "_password"
-        Me._password.Size = New System.Drawing.Size(250, 20)
+        Me._password.Size = New System.Drawing.Size(250, 19)
         Me._password.TabIndex = 23
         Me._password.Text = "Password"
         '
@@ -108,7 +108,7 @@ Partial Class registro
         Me._email.Location = New System.Drawing.Point(52, 170)
         Me._email.Margin = New System.Windows.Forms.Padding(0)
         Me._email.MaximumSize = New System.Drawing.Size(267, 20)
-        Me._email.MaxLength = 20
+        Me._email.MaxLength = 1000
         Me._email.MinimumSize = New System.Drawing.Size(267, 20)
         Me._email.Name = "_email"
         Me._email.Size = New System.Drawing.Size(267, 19)
