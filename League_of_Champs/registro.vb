@@ -51,10 +51,6 @@
 
     Private Sub registro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         extra.redondearBoton(button)
-        'PictureBox1.Parent = _password
-        'PictureBox1.Top = 1
-        'PictureBox1.BringToFront()
-
     End Sub
 
     Private Sub _name_Enter(sender As Object, e As EventArgs) Handles _name.Enter
@@ -126,8 +122,14 @@
         Else
             validation = validator.validarDatos(_username.Text.Trim, _password.Text.Trim, _email.Text.Trim)
 
-            extra.mensajes(validation)
+            If validation = 0 Then
+                solicitarCodigo.Show()
+                Me.Enabled() = False
+            Else
+                extra.mensajes(validation)
+            End If
         End If
+
     End Sub
 
     Private Sub _username_TextChanged(sender As Object, e As EventArgs) Handles _username.TextChanged

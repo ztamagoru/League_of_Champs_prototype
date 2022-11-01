@@ -18,22 +18,16 @@ Public Class validador
 
     Public Overloads Function validarDatos(username As String, password As String, email As String) As Integer
         If validU(username) And validarMail(email) And validPass(password) Then
-            validarDatos = 3
+            validarDatos = 0
 
         ElseIf Not validU(username) Then
-
-            validarDatos = 4
+            validarDatos = 3
 
         ElseIf Not validarMail(email) Then
-
-            validarDatos = 5
+            validarDatos = 4
 
         ElseIf Not validPass(password) Then
-
-            validarDatos = 6
-
-        Else
-            validarDatos = 7
+            validarDatos = 5
         End If
 
         Return validarDatos
@@ -55,4 +49,6 @@ Public Class validador
 
         Return False
     End Function
+
+    'Public Sub 
 End Class
