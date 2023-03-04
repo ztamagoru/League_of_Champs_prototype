@@ -80,11 +80,11 @@ Public Class validador
             "Thank you," + vbCrLf + "The League of Champs Team"
 
         smtp_server.UseDefaultCredentials = False
-        smtp_server.Credentials = New Net.NetworkCredential("mariazdanovitchet24@gmail.com", "vwjivhvrptbucxue")
+        smtp_server.Credentials = New Net.NetworkCredential("example@gmail.com", "password")
         smtp_server.EnableSsl = True
 
         e_mail = New MailMessage
-        e_mail.From = New MailAddress("mariazdanovitchet24@gmail.com")
+        e_mail.From = New MailAddress("example@gmail.com")
         e_mail.To.Add(registro._email.Text.Trim)
         e_mail.Subject = "League of Champs - Verify your email adress"
         e_mail.IsBodyHtml = False
